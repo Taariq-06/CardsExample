@@ -41,15 +41,28 @@ const App = () => {
             img: '/pexels-framesbyambro-15531446.jpg',
         }
     ])
+
+    const updateEmployee = (updatedData) => {
+        const updatedEmployees = employees.map(employee => {
+            if( employee.id === updatedData.id ) {
+                return {...employee, ...updatedData}
+            };
+            return employee;
+        });
+
+        setEmployees(updatedEmployees);
+    };
     return (
         <div className="flex flex-wrap justify-center gap-6 m-4">
             {employees.map(employee => {
                 return (
                     <Employee 
-                        key={uuidv4()}
+                        key={employee.id}
+                        id={employee.id}
                         name={employee.name}
                         role={employee.role}
                         img={employee.img}
+                        updateEmployee={updateEmployee}
                     />
                 );
              })}
