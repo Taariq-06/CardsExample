@@ -32,7 +32,6 @@ function EmployeeModal(props) {
         </Modal.Header>
         <Modal.Body>
         <form onSubmit={(e) => {
-          handleClose();
           e.preventDefault();
           props.updateEmployee({
             id: props.id, 
@@ -86,6 +85,7 @@ function EmployeeModal(props) {
           </button>
           <button className="bg-purple-500 hover:bg-purple-700 duration-400 ease-in-out text-white font-bold py-2 px-4 border border-purple-700 rounded" 
             form='UpdateEmployee' 
+            onClick={handleClose}
             >
             Update
           </button>
