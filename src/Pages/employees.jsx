@@ -60,10 +60,10 @@ const Employees = () => {
         setEmployees([...employees, data])
     }
     return (
-        <div className=" bg-sky-200 min-h-screen py-[1rem]">
+        <div className=" bg-sky-200 min-h-screen py-[1rem] px-[0.6rem]">
                         
             <>
-                <div className="flex flex-wrap justify-center gap-6 m-4 ">
+                <div className="flex flex-wrap justify-center gap-6 mb-4">
                     {employees.map(employee => {
                         const editEmployee = (
                             <EmployeeModal  
@@ -89,7 +89,6 @@ const Employees = () => {
 
             <AddEmployee  newEmployee={newEmployee}/> 
             </>
-
         </div>
 
         

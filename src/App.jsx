@@ -1,17 +1,21 @@
-import { useState } from "react";
-import Employee from "./components/Employee/employee";
-import AddEmployee from "./components/Add Employee/addEmployee";
-import EmployeeModal from "./components/Edit Employee/employeeModal";
 import Navbar from "./components/Navbar/navbar";
 import Employees from "./Pages/employees";
+import Customers from "./Pages/customers";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 
 
 const App = () => {
    
     return (
-        <Navbar>
-            <Employees />
-        </Navbar>
+        <BrowserRouter>
+            <Navbar>
+                <Routes>
+                    <Route path="/employees" element={<Employees />} />
+                    <Route path="/customers" element={<Customers />} />
+                </Routes>
+            </Navbar>
+        </BrowserRouter>
         
     );
 }
